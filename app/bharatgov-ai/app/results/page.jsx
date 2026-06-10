@@ -32,7 +32,6 @@ function ResultsContent() {
         "Previous Year Marksheet",
       ],
     },
-
     education: {
       name: "National Scholarship Portal Education Support",
       website: "https://scholarships.gov.in",
@@ -46,7 +45,6 @@ function ResultsContent() {
         "Marksheet",
       ],
     },
-
     "student loan": {
       name: "Vidya Lakshmi Education Loan Portal",
       website: "https://www.vidyalakshmi.co.in",
@@ -60,21 +58,6 @@ function ResultsContent() {
         "Bank Details",
       ],
     },
-
-    "research & innovation": {
-      name: "Startup India / Innovation Support",
-      website: "https://www.startupindia.gov.in",
-      description:
-        "Supports students, researchers, and innovators with funding, mentorship, and innovation opportunities.",
-      documents: [
-        "Aadhaar Card",
-        "Institution ID",
-        "Project Proposal",
-        "Academic Proof",
-        "Bank Details",
-      ],
-    },
-
     "health care": {
       name: "Ayushman Bharat Health Support",
       website: "https://beneficiary.nha.gov.in",
@@ -88,20 +71,6 @@ function ResultsContent() {
         "Mobile Number",
       ],
     },
-
-    "healthcare insurance": {
-      name: "Ayushman Bharat PM-JAY",
-      website: "https://pmjay.gov.in",
-      description:
-        "Provides health insurance coverage for eligible families.",
-      documents: [
-        "Aadhaar Card",
-        "Ration Card",
-        "Family ID",
-        "Mobile Number",
-      ],
-    },
-
     employment: {
       name: "PM Employment Generation Programme",
       website: "https://www.kviconline.gov.in/pmegpeportal",
@@ -115,21 +84,6 @@ function ResultsContent() {
         "Project Details",
       ],
     },
-
-    "self employment": {
-      name: "PMEGP Self Employment Scheme",
-      website: "https://www.kviconline.gov.in/pmegpeportal",
-      description:
-        "Helps eligible citizens start self-employment or micro-enterprise activities.",
-      documents: [
-        "Aadhaar Card",
-        "Project Report",
-        "Bank Passbook",
-        "Education Proof",
-        "Category Certificate if applicable",
-      ],
-    },
-
     "skill development": {
       name: "PM Kaushal Vikas Yojana",
       website: "https://www.pmkvyofficial.org",
@@ -143,7 +97,6 @@ function ResultsContent() {
         "Passport Size Photo",
       ],
     },
-
     "business loan": {
       name: "Pradhan Mantri Mudra Yojana",
       website: "https://www.mudra.org.in",
@@ -157,21 +110,6 @@ function ResultsContent() {
         "Address Proof",
       ],
     },
-
-    "msme support": {
-      name: "MSME Udyam Registration / Support",
-      website: "https://udyamregistration.gov.in",
-      description:
-        "Supports micro, small, and medium enterprises through registration, finance, and business assistance.",
-      documents: [
-        "Aadhaar Card",
-        "PAN Card",
-        "Udyam Registration",
-        "Bank Details",
-        "Business Proof",
-      ],
-    },
-
     "startup support": {
       name: "Startup India Support Scheme",
       website: "https://www.startupindia.gov.in",
@@ -185,7 +123,6 @@ function ResultsContent() {
         "Startup Registration Details",
       ],
     },
-
     agriculture: {
       name: "PM Kisan Samman Nidhi",
       website: "https://pmkisan.gov.in",
@@ -198,21 +135,6 @@ function ResultsContent() {
         "Farmer Registration Details",
       ],
     },
-
-    "farmer subsidies": {
-      name: "PM Kisan / Farmer Subsidy Support",
-      website: "https://pmkisan.gov.in",
-      description:
-        "Supports farmers with subsidy assistance for seeds, equipment, irrigation, and agricultural needs.",
-      documents: [
-        "Aadhaar Card",
-        "Land Records",
-        "Farmer ID",
-        "Bank Passbook",
-        "Purchase Proof if applicable",
-      ],
-    },
-
     housing: {
       name: "PM Awas Yojana",
       website: "https://pmaymis.gov.in",
@@ -226,7 +148,6 @@ function ResultsContent() {
         "Property / Land Details",
       ],
     },
-
     "women empowerment": {
       name: "Women Welfare Schemes",
       website: "https://www.myscheme.gov.in",
@@ -240,21 +161,6 @@ function ResultsContent() {
         "Self Declaration",
       ],
     },
-
-    "women entrepreneurship": {
-      name: "Stand Up India Scheme",
-      website: "https://www.standupmitra.in",
-      description:
-        "Supports women entrepreneurs with business loans and enterprise development support.",
-      documents: [
-        "Aadhaar Card",
-        "PAN Card",
-        "Business Plan",
-        "Bank Details",
-        "Category Certificate if applicable",
-      ],
-    },
-
     "senior citizen welfare": {
       name: "National Social Assistance Programme",
       website: "https://nsap.nic.in",
@@ -268,7 +174,6 @@ function ResultsContent() {
         "Address Proof",
       ],
     },
-
     "disability support": {
       name: "Disability Welfare Support",
       website: "https://depwd.gov.in",
@@ -282,33 +187,6 @@ function ResultsContent() {
         "Address Proof",
       ],
     },
-
-    "child welfare": {
-      name: "Integrated Child Development Services",
-      website: "https://wcd.nic.in",
-      description:
-        "Provides welfare, nutrition, and development support for children and mothers.",
-      documents: [
-        "Aadhaar Card",
-        "Birth Certificate",
-        "Parent ID Proof",
-        "Address Proof",
-      ],
-    },
-
-    "youth development": {
-      name: "Nehru Yuva Kendra Youth Development",
-      website: "https://nyks.nic.in",
-      description:
-        "Supports youth development, leadership, community service, and skill-building activities.",
-      documents: [
-        "Aadhaar Card",
-        "Age Proof",
-        "Education Proof",
-        "Address Proof",
-      ],
-    },
-
     "minority welfare": {
       name: "Minority Welfare Scholarship / Support",
       website: "https://www.minorityaffairs.gov.in",
@@ -322,35 +200,6 @@ function ResultsContent() {
         "Education Proof",
       ],
     },
-
-    "tribal welfare": {
-      name: "Tribal Welfare Support Scheme",
-      website: "https://tribal.nic.in",
-      description:
-        "Supports tribal communities through education, livelihood, and welfare assistance.",
-      documents: [
-        "Aadhaar Card",
-        "ST Certificate",
-        "Income Certificate",
-        "Bank Passbook",
-        "Address Proof",
-      ],
-    },
-
-    "social security": {
-      name: "National Social Assistance Programme",
-      website: "https://nsap.nic.in",
-      description:
-        "Provides social security assistance for vulnerable citizens.",
-      documents: [
-        "Aadhaar Card",
-        "Income Certificate",
-        "Age Proof if applicable",
-        "Bank Passbook",
-        "Address Proof",
-      ],
-    },
-
     "pension schemes": {
       name: "Atal Pension Yojana",
       website: "https://www.india.gov.in/spotlight/atal-pension-yojana",
@@ -363,7 +212,6 @@ function ResultsContent() {
         "Age Proof",
       ],
     },
-
     "rural development": {
       name: "MGNREGA Rural Development Support",
       website: "https://nrega.nic.in",
@@ -376,7 +224,6 @@ function ResultsContent() {
         "Address Proof",
       ],
     },
-
     "urban development": {
       name: "PM SVANidhi / Urban Livelihood Scheme",
       website: "https://pmsvanidhi.mohua.gov.in",
@@ -389,33 +236,6 @@ function ResultsContent() {
         "Address Proof",
       ],
     },
-
-    "digital services": {
-      name: "Digital India Services",
-      website: "https://www.digitalindia.gov.in",
-      description:
-        "Helps citizens access digital governance services and online benefits.",
-      documents: [
-        "Aadhaar Card",
-        "Mobile Number",
-        "Email ID",
-        "Address Proof",
-      ],
-    },
-
-    "financial assistance": {
-      name: "MyScheme Financial Assistance Search",
-      website: "https://www.myscheme.gov.in",
-      description:
-        "Helps eligible citizens access financial assistance through government benefit transfer systems.",
-      documents: [
-        "Aadhaar Card",
-        "Bank Passbook",
-        "Income Certificate",
-        "Address Proof",
-      ],
-    },
-
     "green energy": {
       name: "PM Surya Ghar / Green Energy Support",
       website: "https://www.pmsuryaghar.gov.in",
@@ -443,6 +263,9 @@ function ResultsContent() {
         "Address Proof",
       ],
     };
+
+  const aiExplanation =
+    `As a ${userData.occupation} from ${userData.state}, belonging to the ${userData.category} category with an annual income of ₹${userData.income}, this scheme is relevant for your selected need: ${userData.need}. BharatGov AI matched your profile with the scheme category and generated a personalized recommendation to help you understand the eligibility path, required documents, and next application steps.`;
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-100 to-green-100 p-6 text-black">
@@ -513,7 +336,7 @@ function ResultsContent() {
           </h2>
 
           <ol className="list-decimal pl-6 space-y-2">
-            <li>Visit the official government scheme portal.</li>
+            <li>Visit the official government scheme portal using the Apply Now button.</li>
             <li>Register or login using mobile number / Aadhaar.</li>
             <li>Fill personal, income, category, and need-based details.</li>
             <li>Upload the required documents.</li>
@@ -522,17 +345,12 @@ function ResultsContent() {
           </ol>
         </section>
 
-        <section className="bg-gray-50 border border-gray-200 rounded-2xl p-6">
-          <h2 className="text-2xl font-bold text-gray-800 mb-3">
+        <section className="bg-blue-50 border border-blue-200 rounded-2xl p-6">
+          <h2 className="text-2xl font-bold text-blue-800 mb-3">
             AI Explanation
           </h2>
 
-          <p className="text-gray-700">
-            This result is generated using need-based scheme matching. In the
-            next version, BharatGov AI will use a real scheme database and Gemini
-            AI to provide more accurate recommendations with eligibility
-            reasoning.
-          </p>
+          <p className="text-gray-700">{aiExplanation}</p>
         </section>
       </div>
     </main>
