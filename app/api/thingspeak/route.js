@@ -2,7 +2,28 @@ export async function POST(req) {
   try {
     const body = await req.json();
 
-    const url = `https://api.thingspeak.com/update?api_key=${process.env.THINGSPEAK_WRITE_KEY}&field1=${body.age}&field2=${encodeURIComponent(body.state)}&field3=${body.income}&field4=${encodeURIComponent(body.category)}&field5=${encodeURIComponent(body.occupation)}&field6=${encodeURIComponent(body.need)}`;
+    if (!process.env.THINGSPEAK_WRITE_KEY) {
+      return Response.json({
+        success: false,
+        error: "ThingSpeak key missing",
+      });
+    }
+
+    const url =
+      "https://api.thingspeak.com/update?api_key=" +
+      process.env.THINGSPEAK_WRITE_KEY +
+      "&field1=" +
+      encodeURIComponent(body.age) +
+      "&field2=" +
+      encodeURIComponent(body.state) +
+      "&field3=" +
+      encodeURIComponent(body.income) +
+      "&field4=" +
+      encodeURIComponent(body.category) +
+      "&field5=" +
+      encodeURIComponent(body.occupation) +
+      "&field6=" +
+      encodeURIComponent(body.need);
 
     const response = await fetch(url);
     const result = await response.text();
@@ -10,14 +31,12 @@ export async function POST(req) {
     return Response.json({
       success: true,
       entryId: result,
+      sentData: body,
     });
   } catch (error) {
-    return Response.json(
-      {
-        success: false,
-        error: error.message,
-      },
-      { status: 500 }
-    );
+    return Response.json({
+      success: false,
+      error: error.message,
+    });
   }
 }
