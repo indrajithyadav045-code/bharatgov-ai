@@ -19,9 +19,10 @@ function ResultsContent() {
 
   const schemeMap = {
     scholarship: {
-      name: "Post Matric Scholarship Scheme",
+      name: "National Scholarship Portal",
+      website: "https://scholarships.gov.in",
       description:
-        "Supports students from eligible income and category groups to continue higher education.",
+        "Helps students apply for central and state scholarship schemes.",
       documents: [
         "Aadhaar Card",
         "Income Certificate",
@@ -34,6 +35,7 @@ function ResultsContent() {
 
     education: {
       name: "National Scholarship Portal Education Support",
+      website: "https://scholarships.gov.in",
       description:
         "Helps eligible students apply for central and state education support schemes.",
       documents: [
@@ -46,7 +48,8 @@ function ResultsContent() {
     },
 
     "student loan": {
-      name: "Vidya Lakshmi Education Loan Scheme",
+      name: "Vidya Lakshmi Education Loan Portal",
+      website: "https://www.vidyalakshmi.co.in",
       description:
         "Helps students access education loan information and application support.",
       documents: [
@@ -59,9 +62,10 @@ function ResultsContent() {
     },
 
     "research & innovation": {
-      name: "Research & Innovation Support Scheme",
+      name: "Startup India / Innovation Support",
+      website: "https://www.startupindia.gov.in",
       description:
-        "Supports students, researchers, and innovators with funding and mentorship.",
+        "Supports students, researchers, and innovators with funding, mentorship, and innovation opportunities.",
       documents: [
         "Aadhaar Card",
         "Institution ID",
@@ -73,6 +77,7 @@ function ResultsContent() {
 
     "health care": {
       name: "Ayushman Bharat Health Support",
+      website: "https://beneficiary.nha.gov.in",
       description:
         "Provides health coverage and medical support for eligible families.",
       documents: [
@@ -86,6 +91,7 @@ function ResultsContent() {
 
     "healthcare insurance": {
       name: "Ayushman Bharat PM-JAY",
+      website: "https://pmjay.gov.in",
       description:
         "Provides health insurance coverage for eligible families.",
       documents: [
@@ -98,6 +104,7 @@ function ResultsContent() {
 
     employment: {
       name: "PM Employment Generation Programme",
+      website: "https://www.kviconline.gov.in/pmegpeportal",
       description:
         "Supports youth and unemployed citizens with employment and self-employment opportunities.",
       documents: [
@@ -111,6 +118,7 @@ function ResultsContent() {
 
     "self employment": {
       name: "PMEGP Self Employment Scheme",
+      website: "https://www.kviconline.gov.in/pmegpeportal",
       description:
         "Helps eligible citizens start self-employment or micro-enterprise activities.",
       documents: [
@@ -124,6 +132,7 @@ function ResultsContent() {
 
     "skill development": {
       name: "PM Kaushal Vikas Yojana",
+      website: "https://www.pmkvyofficial.org",
       description:
         "Provides skill training and certification for better employment opportunities.",
       documents: [
@@ -137,6 +146,7 @@ function ResultsContent() {
 
     "business loan": {
       name: "Pradhan Mantri Mudra Yojana",
+      website: "https://www.mudra.org.in",
       description:
         "Provides financial support for small businesses and micro enterprises.",
       documents: [
@@ -149,7 +159,8 @@ function ResultsContent() {
     },
 
     "msme support": {
-      name: "MSME Support Scheme",
+      name: "MSME Udyam Registration / Support",
+      website: "https://udyamregistration.gov.in",
       description:
         "Supports micro, small, and medium enterprises through registration, finance, and business assistance.",
       documents: [
@@ -163,6 +174,7 @@ function ResultsContent() {
 
     "startup support": {
       name: "Startup India Support Scheme",
+      website: "https://www.startupindia.gov.in",
       description:
         "Helps entrepreneurs access startup recognition, mentorship, and government support.",
       documents: [
@@ -176,6 +188,7 @@ function ResultsContent() {
 
     agriculture: {
       name: "PM Kisan Samman Nidhi",
+      website: "https://pmkisan.gov.in",
       description:
         "Provides financial assistance to eligible farmers for agricultural needs.",
       documents: [
@@ -187,9 +200,10 @@ function ResultsContent() {
     },
 
     "farmer subsidies": {
-      name: "Farmer Subsidy Support Scheme",
+      name: "PM Kisan / Farmer Subsidy Support",
+      website: "https://pmkisan.gov.in",
       description:
-        "Supports farmers with subsidy assistance for seeds, equipment, irrigation, and other agricultural needs.",
+        "Supports farmers with subsidy assistance for seeds, equipment, irrigation, and agricultural needs.",
       documents: [
         "Aadhaar Card",
         "Land Records",
@@ -201,6 +215,7 @@ function ResultsContent() {
 
     housing: {
       name: "PM Awas Yojana",
+      website: "https://pmaymis.gov.in",
       description:
         "Helps eligible citizens get support for affordable housing.",
       documents: [
@@ -213,7 +228,8 @@ function ResultsContent() {
     },
 
     "women empowerment": {
-      name: "Mahila Shakti / Women Welfare Scheme",
+      name: "Women Welfare Schemes",
+      website: "https://www.myscheme.gov.in",
       description:
         "Supports women through welfare, safety, skill development, and financial assistance programs.",
       documents: [
@@ -227,6 +243,7 @@ function ResultsContent() {
 
     "women entrepreneurship": {
       name: "Stand Up India Scheme",
+      website: "https://www.standupmitra.in",
       description:
         "Supports women entrepreneurs with business loans and enterprise development support.",
       documents: [
@@ -240,6 +257,7 @@ function ResultsContent() {
 
     "senior citizen welfare": {
       name: "National Social Assistance Programme",
+      website: "https://nsap.nic.in",
       description:
         "Provides welfare support and pension-related assistance for eligible senior citizens.",
       documents: [
@@ -252,7 +270,8 @@ function ResultsContent() {
     },
 
     "disability support": {
-      name: "Disability Welfare Support Scheme",
+      name: "Disability Welfare Support",
+      website: "https://depwd.gov.in",
       description:
         "Supports persons with disabilities through welfare benefits, assistive support, and financial aid.",
       documents: [
@@ -266,6 +285,7 @@ function ResultsContent() {
 
     "child welfare": {
       name: "Integrated Child Development Services",
+      website: "https://wcd.nic.in",
       description:
         "Provides welfare, nutrition, and development support for children and mothers.",
       documents: [
@@ -277,7 +297,8 @@ function ResultsContent() {
     },
 
     "youth development": {
-      name: "Nehru Yuva Kendra Youth Development Scheme",
+      name: "Nehru Yuva Kendra Youth Development",
+      website: "https://nyks.nic.in",
       description:
         "Supports youth development, leadership, community service, and skill-building activities.",
       documents: [
@@ -289,7 +310,8 @@ function ResultsContent() {
     },
 
     "minority welfare": {
-      name: "Minority Welfare Scholarship / Support Scheme",
+      name: "Minority Welfare Scholarship / Support",
+      website: "https://www.minorityaffairs.gov.in",
       description:
         "Provides educational and welfare support for eligible minority community citizens.",
       documents: [
@@ -303,6 +325,7 @@ function ResultsContent() {
 
     "tribal welfare": {
       name: "Tribal Welfare Support Scheme",
+      website: "https://tribal.nic.in",
       description:
         "Supports tribal communities through education, livelihood, and welfare assistance.",
       documents: [
@@ -316,6 +339,7 @@ function ResultsContent() {
 
     "social security": {
       name: "National Social Assistance Programme",
+      website: "https://nsap.nic.in",
       description:
         "Provides social security assistance for vulnerable citizens.",
       documents: [
@@ -329,6 +353,7 @@ function ResultsContent() {
 
     "pension schemes": {
       name: "Atal Pension Yojana",
+      website: "https://www.india.gov.in/spotlight/atal-pension-yojana",
       description:
         "Provides pension support for eligible citizens to improve financial security.",
       documents: [
@@ -341,6 +366,7 @@ function ResultsContent() {
 
     "rural development": {
       name: "MGNREGA Rural Development Support",
+      website: "https://nrega.nic.in",
       description:
         "Supports rural households through wage employment and livelihood assistance.",
       documents: [
@@ -353,6 +379,7 @@ function ResultsContent() {
 
     "urban development": {
       name: "PM SVANidhi / Urban Livelihood Scheme",
+      website: "https://pmsvanidhi.mohua.gov.in",
       description:
         "Supports urban workers, street vendors, and low-income urban citizens.",
       documents: [
@@ -364,7 +391,8 @@ function ResultsContent() {
     },
 
     "digital services": {
-      name: "Digital India Services Support",
+      name: "Digital India Services",
+      website: "https://www.digitalindia.gov.in",
       description:
         "Helps citizens access digital governance services and online benefits.",
       documents: [
@@ -376,7 +404,8 @@ function ResultsContent() {
     },
 
     "financial assistance": {
-      name: "Direct Benefit Transfer Support",
+      name: "MyScheme Financial Assistance Search",
+      website: "https://www.myscheme.gov.in",
       description:
         "Helps eligible citizens access financial assistance through government benefit transfer systems.",
       documents: [
@@ -389,6 +418,7 @@ function ResultsContent() {
 
     "green energy": {
       name: "PM Surya Ghar / Green Energy Support",
+      website: "https://www.pmsuryaghar.gov.in",
       description:
         "Supports citizens with clean energy and rooftop solar-related assistance.",
       documents: [
@@ -403,6 +433,7 @@ function ResultsContent() {
   const selectedScheme =
     schemeMap[normalizedNeed] || {
       name: "General Government Welfare Scheme",
+      website: "https://www.myscheme.gov.in",
       description:
         "Based on your profile, BharatGov AI suggests checking central and state welfare schemes.",
       documents: [
@@ -453,6 +484,15 @@ function ResultsContent() {
           <h3 className="text-xl font-semibold">{selectedScheme.name}</h3>
 
           <p className="text-gray-700 mt-3">{selectedScheme.description}</p>
+
+          <a
+            href={selectedScheme.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-5 bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-xl"
+          >
+            Apply Now / Official Website
+          </a>
         </section>
 
         <section className="bg-yellow-50 border border-yellow-200 rounded-2xl p-6 mb-6">
