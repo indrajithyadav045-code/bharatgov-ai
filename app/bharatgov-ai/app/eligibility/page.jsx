@@ -137,19 +137,34 @@ export default function EligibilityPage() {
     "Green Energy",
   ];
 
-  const handleSubmit = () => {
-    const query = new URLSearchParams({
+  const handleSubmit = async () => {
+  await fetch("/api/thingspeak", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
       age,
       state,
       income,
       category,
       occupation,
       need,
-      language,
-    }).toString();
+    }),
+  });
 
-    router.push(`/results?${query}`);
-  };
+  const query = new URLSearchParams({
+    age,
+    state,
+    income,
+    category,
+    occupation,
+    need,
+    language,
+  }).toString();
+
+  router.push(`/results?${query}`);
+};
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-100 to-green-100 flex items-center justify-center p-6">
