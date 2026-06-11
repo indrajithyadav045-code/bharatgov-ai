@@ -75,6 +75,30 @@ export default function EligibilityPage() {
       need: "ആവശ്യം / സഹായ തരം തിരഞ്ഞെടുക്കുക",
       button: "യോഗ്യത പരിശോധിക്കുക",
     },
+    Kannada: {
+      title: "ಭಾರತ್Gov AI ಸಹಾಯಕ",
+      subtitle: "ಭಾರತದ ಸರಿಯಾದ ಸರ್ಕಾರಿ ಯೋಜನೆಗಳನ್ನು ಕೆಲವೇ ಕ್ಷಣಗಳಲ್ಲಿ ಹುಡುಕಿ",
+      language: "ಭಾಷೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+      age: "ವಯಸ್ಸು",
+      state: "ರಾಜ್ಯ / ಕೇಂದ್ರಾಡಳಿತ ಪ್ರದೇಶವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+      income: "ವಾರ್ಷಿಕ ಆದಾಯ",
+      category: "ವರ್ಗವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+      occupation: "ವೃತ್ತಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+      need: "ಅವಶ್ಯಕತೆ / ಸಹಾಯ ಪ್ರಕಾರವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+      button: "ಅರ್ಹತೆ ಪರಿಶೀಲಿಸಿ",
+    },
+    Marathi: {
+      title: "भारतGov AI सहाय्यक",
+      subtitle: "भारतातील योग्य सरकारी योजना काही सेकंदांत शोधा",
+      language: "भाषा निवडा",
+      age: "वय",
+      state: "राज्य / केंद्रशासित प्रदेश निवडा",
+      income: "वार्षिक उत्पन्न",
+      category: "प्रवर्ग निवडा",
+      occupation: "व्यवसाय निवडा",
+      need: "गरज / सहाय्य प्रकार निवडा",
+      button: "पात्रता तपासा",
+    },
   };
 
   const states = [
@@ -137,34 +161,19 @@ export default function EligibilityPage() {
     "Green Energy",
   ];
 
-  const handleSubmit = async () => {
-  await fetch("/api/thingspeak", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
+  const handleSubmit = () => {
+    const query = new URLSearchParams({
       age,
       state,
       income,
       category,
       occupation,
       need,
-    }),
-  });
+      language,
+    }).toString();
 
-  const query = new URLSearchParams({
-    age,
-    state,
-    income,
-    category,
-    occupation,
-    need,
-    language,
-  }).toString();
-
-  router.push(`/results?${query}`);
-};
+    router.push(`/results?${query}`);
+  };
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-100 to-green-100 flex items-center justify-center p-6">
@@ -183,6 +192,8 @@ export default function EligibilityPage() {
             <option>Hindi</option>
             <option>Telugu</option>
             <option>Malayalam</option>
+            <option>Kannada</option>
+            <option>Marathi</option>
           </select>
         </div>
 
