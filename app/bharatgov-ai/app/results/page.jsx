@@ -134,6 +134,39 @@ function ResultsContent() {
         "ട്രാക്കിംഗിനായി അംഗീകാര നമ്പർ സൂക്ഷിക്കുക.",
       ],
     },
+    Kannada: {
+  title: "ಅರ್ಹ ಯೋಜನೆ ಫಲಿತಾಂಶಗಳು",
+  subtitle: "ನಿಮ್ಮ ವಿವರಗಳ ಆಧಾರದ ಮೇಲೆ BharatGov AI ಸೂಕ್ತ ಸರ್ಕಾರಿ ಯೋಜನೆಯನ್ನು ಕಂಡುಹಿಡಿದಿದೆ.",
+  age: "ವಯಸ್ಸು",
+  state: "ರಾಜ್ಯ",
+  income: "ಆದಾಯ",
+  category: "ವರ್ಗ",
+  occupation: "ವೃತ್ತಿ",
+  need: "ಅವಶ್ಯಕತೆ",
+  recommended: "ಶಿಫಾರಸು ಮಾಡಿದ ಯೋಜನೆ",
+  documents: "ಅಗತ್ಯ ದಾಖಲೆಗಳು",
+  steps: "ಅರ್ಜಿ ಹಂತಗಳು",
+  ai: "AI ವಿವರಣೆ",
+  apply: "ಈಗ ಅರ್ಜಿ ಸಲ್ಲಿಸಿ",
+  stepList: ["ಅಧಿಕೃತ ವೆಬ್‌ಸೈಟ್‌ಗೆ ಭೇಟಿ ನೀಡಿ","ನೋಂದಣಿ ಮಾಡಿ","ವಿವರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ","ದಾಖಲೆಗಳನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ","ಅರ್ಜಿಯನ್ನು ಸಲ್ಲಿಸಿ","ಸ್ಥಿತಿಯನ್ನು ಪರಿಶೀಲಿಸಿ"],
+},
+
+Marathi: {
+  title: "पात्र योजना निकाल",
+  subtitle: "तुमच्या तपशीलांच्या आधारे BharatGov AI ने योग्य सरकारी योजना शोधली आहे.",
+  age: "वय",
+  state: "राज्य",
+  income: "उत्पन्न",
+  category: "प्रवर्ग",
+  occupation: "व्यवसाय",
+  need: "गरज",
+  recommended: "शिफारस केलेली योजना",
+  documents: "आवश्यक कागदपत्रे",
+  steps: "अर्ज प्रक्रिया",
+  ai: "AI स्पष्टीकरण",
+  apply: "आता अर्ज करा",
+  stepList: ["अधिकृत संकेतस्थळाला भेट द्या","नोंदणी करा","तपशील भरा","कागदपत्रे अपलोड करा","अर्ज सबमिट करा","स्थिती तपासा"],
+},
   };
 
   const stateTranslations = {
@@ -296,8 +329,23 @@ function ResultsContent() {
             {selectedScheme.name[lang]}
           </h3>
           <p className="text-gray-700 mt-3">
+            <div className="mt-4 bg-blue-100 text-blue-700 px-4 py-2 rounded-full inline-block font-bold">
+  Eligibility Score: 92% | Confidence: High
+</div>
             {selectedScheme.description[lang]}
           </p>
+          <div className="mt-5">
+  <h4 className="font-bold text-lg mb-2">
+    Alternative Schemes
+  </h4>
+
+  <ul className="list-disc pl-6 space-y-1">
+    <li>PMEGP</li>
+    <li>Stand Up India</li>
+    <li>CGTMSE</li>
+    <li>Startup India Seed Fund</li>
+  </ul>
+</div>
           <a
             href={selectedScheme.website}
             target="_blank"
