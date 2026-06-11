@@ -282,17 +282,42 @@ Marathi: {
         Malayalam: "യോഗ്യരായ പൗരന്മാർക്ക് ചെലവുകുറഞ്ഞ ഭവന സഹായം നൽകുന്നു.",
       },
     },
+    "senior citizen welfare": {
+  name: {
+    English: "National Social Assistance Programme",
+    Tamil: "தேசிய சமூக உதவி திட்டம்",
+    Hindi: "राष्ट्रीय सामाजिक सहायता कार्यक्रम",
+    Telugu: "జాతీయ సామాజిక సహాయ కార్యక్రమం",
+    Malayalam: "ദേശീയ സാമൂഹിക സഹായ പദ്ധതി",
+  },
+  website: "https://nsap.nic.in",
+  description: {
+    English: "Provides pension and welfare assistance for eligible senior citizens.",
+    Tamil: "தகுதியான மூத்த குடிமக்களுக்கு ஓய்வூதியம் மற்றும் நலத்திட்ட உதவி வழங்குகிறது.",
+    Hindi: "योग्य वरिष्ठ नागरिकों को पेंशन और कल्याण सहायता प्रदान करता है।",
+    Telugu: "అర్హులైన వృద్ధులకు పెన్షన్ మరియు సంక్షేమ సహాయం అందిస్తుంది.",
+    Malayalam: "യോഗ്യരായ മുതിർന്ന പൗരന്മാർക്ക് പെൻഷൻ, ക്ഷേമ സഹായം നൽകുന്നു.",
+  },
+},
   };
 
-  const selectedScheme =
-    schemeMap[normalizedNeed] || schemeMap.scholarship;
-
-  const docs = {
-    English: ["Aadhaar Card", "Income Certificate", "Bank Passbook", "Address Proof"],
-    Tamil: ["ஆதார் அட்டை", "வருமானச் சான்றிதழ்", "வங்கி பாஸ்புக்", "முகவரி சான்று"],
-    Hindi: ["आधार कार्ड", "आय प्रमाण पत्र", "बैंक पासबुक", "पता प्रमाण"],
-    Telugu: ["ఆధార్ కార్డు", "ఆదాయ ధృవీకరణ పత్రం", "బ్యాంక్ పాస్‌బుక్", "చిరునామా రుజువు"],
-    Malayalam: ["ആധാർ കാർഡ്", "വരുമാന സർട്ടിഫിക്കറ്റ്", "ബാങ്ക് പാസ്‌ബുക്ക്", "വിലാസ തെളിവ്"],
+const selectedScheme =
+  schemeMap[normalizedNeed] || {
+    name: {
+      English: "General Government Welfare Scheme",
+      Tamil: "பொது அரசுத் நலத்திட்டம்",
+      Hindi: "सामान्य सरकारी कल्याण योजना",
+      Telugu: "సాధారణ ప్రభుత్వ సంక్షేమ పథకం",
+      Malayalam: "സാമാന്യ സർക്കാർ ക്ഷേമ പദ്ധതി",
+    },
+    website: "https://www.myscheme.gov.in",
+    description: {
+      English: "BharatGov AI suggests checking MyScheme for relevant central and state welfare schemes.",
+      Tamil: "பொருத்தமான மத்திய மற்றும் மாநில நலத்திட்டங்களுக்கு MyScheme-ஐ பார்க்கலாம்.",
+      Hindi: "प्रासंगिक केंद्र और राज्य योजनाओं के लिए MyScheme देखें।",
+      Telugu: "సంబంధిత కేంద్ర మరియు రాష్ట్ర పథకాల కోసం MyScheme చూడండి.",
+      Malayalam: "ബന്ധപ്പെട്ട കേന്ദ്ര, സംസ്ഥാന പദ്ധതികൾക്കായി MyScheme പരിശോധിക്കുക.",
+    },
   };
 
   const aiExplanation = {
@@ -330,7 +355,7 @@ Marathi: {
           </h3>
           <p className="text-gray-700 mt-3">
             <div className="mt-4 bg-blue-100 text-blue-700 px-4 py-2 rounded-full inline-block font-bold">
-  Eligibility Score: 92% | Confidence: High
+ Eligibility Score: {normalizedNeed === "senior citizen welfare" ? "88%" : normalizedNeed === "business loan" ? "91%" : normalizedNeed === "agriculture" ? "90%" : "86%"} | Confidence: High
 </div>
             {selectedScheme.description[lang]}
           </p>
