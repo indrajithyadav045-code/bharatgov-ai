@@ -16,7 +16,12 @@ function ResultsContent() {
     language: params.get("language") || "English",
   };
 
-  const lang = userData.language;
+  const supportedLanguages = ["English", "Tamil", "Hindi", "Telugu", "Malayalam"];
+  const lang = supportedLanguages.includes(userData.language)
+    ? userData.language
+    : "English";
+
+  const normalizedNeed = userData.need.trim().toLowerCase();
 
   const t = {
     English: {
@@ -33,6 +38,7 @@ function ResultsContent() {
       steps: "Application Steps",
       ai: "AI Explanation",
       apply: "Apply Now / Official Website",
+      alternatives: "Alternative Schemes",
       stepList: [
         "Visit the official government scheme portal using the Apply Now button.",
         "Register or login using mobile number / Aadhaar.",
@@ -56,6 +62,7 @@ function ResultsContent() {
       steps: "விண்ணப்ப படிகள்",
       ai: "AI விளக்கம்",
       apply: "இப்போது விண்ணப்பிக்கவும் / அதிகாரப்பூர்வ இணையதளம்",
+      alternatives: "மாற்று திட்டங்கள்",
       stepList: [
         "Apply Now பொத்தானை பயன்படுத்தி அதிகாரப்பூர்வ அரசுத் திட்ட இணையதளத்திற்குச் செல்லவும்.",
         "மொபைல் எண் / ஆதார் மூலம் பதிவு செய்யவும் அல்லது உள்நுழையவும்.",
@@ -79,6 +86,7 @@ function ResultsContent() {
       steps: "आवेदन चरण",
       ai: "AI स्पष्टीकरण",
       apply: "अभी आवेदन करें / आधिकारिक वेबसाइट",
+      alternatives: "वैकल्पिक योजनाएं",
       stepList: [
         "Apply Now बटन का उपयोग करके आधिकारिक सरकारी योजना पोर्टल पर जाएं।",
         "मोबाइल नंबर / आधार से पंजीकरण या लॉगिन करें।",
@@ -102,6 +110,7 @@ function ResultsContent() {
       steps: "దరఖాస్తు దశలు",
       ai: "AI వివరణ",
       apply: "ఇప్పుడే దరఖాస్తు చేయండి / అధికారిక వెబ్‌సైట్",
+      alternatives: "ప్రత్యామ్నాయ పథకాలు",
       stepList: [
         "Apply Now బటన్ ఉపయోగించి అధికారిక ప్రభుత్వ పథకం పోర్టల్‌కు వెళ్లండి.",
         "మొబైల్ నంబర్ / ఆధార్ ఉపయోగించి నమోదు చేయండి లేదా లాగిన్ అవ్వండి.",
@@ -125,6 +134,7 @@ function ResultsContent() {
       steps: "അപേക്ഷാ ഘട്ടങ്ങൾ",
       ai: "AI വിശദീകരണം",
       apply: "ഇപ്പോൾ അപേക്ഷിക്കുക / ഔദ്യോഗിക വെബ്സൈറ്റ്",
+      alternatives: "മറ്റ് പദ്ധതികൾ",
       stepList: [
         "Apply Now ബട്ടൺ ഉപയോഗിച്ച് ഔദ്യോഗിക സർക്കാർ പദ്ധതി പോർട്ടലിലേക്ക് പോകുക.",
         "മൊബൈൽ നമ്പർ / ആധാർ ഉപയോഗിച്ച് രജിസ്റ്റർ ചെയ്യുക അല്ലെങ്കിൽ ലോഗിൻ ചെയ്യുക.",
@@ -134,84 +144,24 @@ function ResultsContent() {
         "ട്രാക്കിംഗിനായി അംഗീകാര നമ്പർ സൂക്ഷിക്കുക.",
       ],
     },
-    Kannada: {
-  title: "ಅರ್ಹ ಯೋಜನೆ ಫಲಿತಾಂಶಗಳು",
-  subtitle: "ನಿಮ್ಮ ವಿವರಗಳ ಆಧಾರದ ಮೇಲೆ BharatGov AI ಸೂಕ್ತ ಸರ್ಕಾರಿ ಯೋಜನೆಯನ್ನು ಕಂಡುಹಿಡಿದಿದೆ.",
-  age: "ವಯಸ್ಸು",
-  state: "ರಾಜ್ಯ",
-  income: "ಆದಾಯ",
-  category: "ವರ್ಗ",
-  occupation: "ವೃತ್ತಿ",
-  need: "ಅವಶ್ಯಕತೆ",
-  recommended: "ಶಿಫಾರಸು ಮಾಡಿದ ಯೋಜನೆ",
-  documents: "ಅಗತ್ಯ ದಾಖಲೆಗಳು",
-  steps: "ಅರ್ಜಿ ಹಂತಗಳು",
-  ai: "AI ವಿವರಣೆ",
-  apply: "ಈಗ ಅರ್ಜಿ ಸಲ್ಲಿಸಿ",
-  stepList: ["ಅಧಿಕೃತ ವೆಬ್‌ಸೈಟ್‌ಗೆ ಭೇಟಿ ನೀಡಿ","ನೋಂದಣಿ ಮಾಡಿ","ವಿವರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ","ದಾಖಲೆಗಳನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ","ಅರ್ಜಿಯನ್ನು ಸಲ್ಲಿಸಿ","ಸ್ಥಿತಿಯನ್ನು ಪರಿಶೀಲಿಸಿ"],
-},
-
-Marathi: {
-  title: "पात्र योजना निकाल",
-  subtitle: "तुमच्या तपशीलांच्या आधारे BharatGov AI ने योग्य सरकारी योजना शोधली आहे.",
-  age: "वय",
-  state: "राज्य",
-  income: "उत्पन्न",
-  category: "प्रवर्ग",
-  occupation: "व्यवसाय",
-  need: "गरज",
-  recommended: "शिफारस केलेली योजना",
-  documents: "आवश्यक कागदपत्रे",
-  steps: "अर्ज प्रक्रिया",
-  ai: "AI स्पष्टीकरण",
-  apply: "आता अर्ज करा",
-  stepList: ["अधिकृत संकेतस्थळाला भेट द्या","नोंदणी करा","तपशील भरा","कागदपत्रे अपलोड करा","अर्ज सबमिट करा","स्थिती तपासा"],
-},
   };
 
   const stateTranslations = {
-    Tamil: {
-      Assam: "அசாம்",
-      "Tamil Nadu": "தமிழ்நாடு",
-      Kerala: "கேரளா",
-      Karnataka: "கர்நாடகா",
-      Telangana: "தெலங்கானா",
-      Maharashtra: "மகாராஷ்டிரா",
-      "Delhi (NCT)": "டெல்லி",
-    },
-    Hindi: {
-      Assam: "असम",
-      "Tamil Nadu": "तमिलनाडु",
-      Kerala: "केरल",
-      Karnataka: "कर्नाटक",
-      Telangana: "तेलंगाना",
-      Maharashtra: "महाराष्ट्र",
-      "Delhi (NCT)": "दिल्ली",
-    },
-    Telugu: {
-      Assam: "అస్సాం",
-      "Tamil Nadu": "తమిళనాడు",
-      Kerala: "కేరళ",
-      Karnataka: "కర్ణాటక",
-      Telangana: "తెలంగాణ",
-      Maharashtra: "మహారాష్ట్ర",
-      "Delhi (NCT)": "ఢిల్లీ",
-    },
-    Malayalam: {
-      Assam: "അസ്സാം",
-      "Tamil Nadu": "തമിഴ്നാട്",
-      Kerala: "കേരളം",
-      Karnataka: "കർണാടക",
-      Telangana: "തെലങ്കാന",
-      Maharashtra: "മഹാരാഷ്ട്ര",
-      "Delhi (NCT)": "ഡൽഹി",
-    },
+    Tamil: { Assam: "அசாம்", "Tamil Nadu": "தமிழ்நாடு", Kerala: "கேரளா", Karnataka: "கர்நாடகா", Telangana: "தெலங்கானா", Maharashtra: "மகாராஷ்டிரா", "Delhi (NCT)": "டெல்லி" },
+    Hindi: { Assam: "असम", "Tamil Nadu": "तमिलनाडु", Kerala: "केरल", Karnataka: "कर्नाटक", Telangana: "तेलंगाना", Maharashtra: "महाराष्ट्र", "Delhi (NCT)": "दिल्ली" },
+    Telugu: { Assam: "అస్సాం", "Tamil Nadu": "తమిళనాడు", Kerala: "కేరళ", Karnataka: "కర్ణాటక", Telangana: "తెలంగాణ", Maharashtra: "మహారాష్ట్ర", "Delhi (NCT)": "ఢిల్లీ" },
+    Malayalam: { Assam: "അസ്സാം", "Tamil Nadu": "തമിഴ്നാട്", Kerala: "കേരളം", Karnataka: "കർണാടക", Telangana: "തെലങ്കാന", Maharashtra: "മഹാരാഷ്ട്ര", "Delhi (NCT)": "ഡൽഹി" },
   };
 
-  const displayState =
-    stateTranslations[lang]?.[userData.state] || userData.state;
+  const displayState = stateTranslations[lang]?.[userData.state] || userData.state;
 
-  const normalizedNeed = userData.need.trim().toLowerCase();
+  const docs = {
+    English: ["Aadhaar Card", "Income Certificate", "Bank Passbook", "Address Proof"],
+    Tamil: ["ஆதார் அட்டை", "வருமானச் சான்றிதழ்", "வங்கி பாஸ்புக்", "முகவரி சான்று"],
+    Hindi: ["आधार कार्ड", "आय प्रमाण पत्र", "बैंक पासबुक", "पता प्रमाण"],
+    Telugu: ["ఆధార్ కార్డు", "ఆదాయ ధృవీకరణ పత్రం", "బ్యాంక్ పాస్‌బుక్", "చిరునామా రుజువు"],
+    Malayalam: ["ആധാർ കാർഡ്", "വരുമാന സർട്ടിഫിക്കറ്റ്", "ബാങ്ക് പാസ്‌ബുക്ക്", "വിലാസ തെളിവ്"],
+  };
 
   const schemeMap = {
     scholarship: {
@@ -230,6 +180,7 @@ Marathi: {
         Telugu: "విద్యార్థులు కేంద్ర మరియు రాష్ట్ర స్కాలర్‌షిప్ పథకాల కోసం దరఖాస్తు చేసుకోవడానికి సహాయపడుతుంది.",
         Malayalam: "കേന്ദ്ര, സംസ്ഥാന സ്കോളർഷിപ്പ് പദ്ധതികൾക്ക് വിദ്യാർത്ഥികൾക്ക് അപേക്ഷിക്കാൻ സഹായിക്കുന്നു.",
       },
+      alternatives: ["PM YASASVI Scholarship", "Central Sector Scholarship", "Post Matric Scholarship", "INSPIRE Scholarship"],
     },
     "business loan": {
       name: {
@@ -247,6 +198,7 @@ Marathi: {
         Telugu: "చిన్న వ్యాపారాలు మరియు సూక్ష్మ సంస్థలకు ఆర్థిక సహాయం అందిస్తుంది.",
         Malayalam: "ചെറുകിട ബിസിനസുകൾക്കും മൈക്രോ എന്റർപ്രൈസുകൾക്കും സാമ്പത്തിക സഹായം നൽകുന്നു.",
       },
+      alternatives: ["PMEGP", "Stand Up India", "CGTMSE", "Startup India Seed Fund"],
     },
     agriculture: {
       name: {
@@ -264,6 +216,7 @@ Marathi: {
         Telugu: "అర్హత గల రైతులకు వ్యవసాయ అవసరాల కోసం ఆర్థిక సహాయం అందిస్తుంది.",
         Malayalam: "യോഗ്യരായ കർഷകർക്ക് കാർഷിക ആവശ്യങ്ങൾക്ക് സാമ്പത്തിക സഹായം നൽകുന്നു.",
       },
+      alternatives: ["Kisan Credit Card", "PM Fasal Bima Yojana", "Soil Health Card", "eNAM"],
     },
     housing: {
       name: {
@@ -281,44 +234,58 @@ Marathi: {
         Telugu: "అర్హులైన పౌరులకు సరసమైన గృహాల కోసం సహాయం అందిస్తుంది.",
         Malayalam: "യോഗ്യരായ പൗരന്മാർക്ക് ചെലവുകുറഞ്ഞ ഭവന സഹായം നൽകുന്നു.",
       },
+      alternatives: ["PMAY Rural", "Credit Linked Subsidy Scheme", "Affordable Rental Housing", "Smart Cities Housing"],
     },
     "senior citizen welfare": {
-  name: {
-    English: "National Social Assistance Programme",
-    Tamil: "தேசிய சமூக உதவி திட்டம்",
-    Hindi: "राष्ट्रीय सामाजिक सहायता कार्यक्रम",
-    Telugu: "జాతీయ సామాజిక సహాయ కార్యక్రమం",
-    Malayalam: "ദേശീയ സാമൂഹിക സഹായ പദ്ധതി",
-  },
-  website: "https://nsap.nic.in",
-  description: {
-    English: "Provides pension and welfare assistance for eligible senior citizens.",
-    Tamil: "தகுதியான மூத்த குடிமக்களுக்கு ஓய்வூதியம் மற்றும் நலத்திட்ட உதவி வழங்குகிறது.",
-    Hindi: "योग्य वरिष्ठ नागरिकों को पेंशन और कल्याण सहायता प्रदान करता है।",
-    Telugu: "అర్హులైన వృద్ధులకు పెన్షన్ మరియు సంక్షేమ సహాయం అందిస్తుంది.",
-    Malayalam: "യോഗ്യരായ മുതിർന്ന പൗരന്മാർക്ക് പെൻഷൻ, ക്ഷേമ സഹായം നൽകുന്നു.",
-  },
-},
+      name: {
+        English: "National Social Assistance Programme",
+        Tamil: "தேசிய சமூக உதவி திட்டம்",
+        Hindi: "राष्ट्रीय सामाजिक सहायता कार्यक्रम",
+        Telugu: "జాతీయ సామాజిక సహాయ కార్యక్రమం",
+        Malayalam: "ദേശീയ സാമൂഹിക സഹായ പദ്ധതി",
+      },
+      website: "https://nsap.nic.in",
+      description: {
+        English: "Provides pension and welfare assistance for eligible senior citizens.",
+        Tamil: "தகுதியான மூத்த குடிமக்களுக்கு ஓய்வூதியம் மற்றும் நலத்திட்ட உதவி வழங்குகிறது.",
+        Hindi: "योग्य वरिष्ठ नागरिकों को पेंशन और कल्याण सहायता प्रदान करता है।",
+        Telugu: "అర్హులైన వృద్ధులకు పెన్షన్ మరియు సంక్షేమ సహాయం అందిస్తుంది.",
+        Malayalam: "യോഗ്യരായ മുതിർന്ന പൗരന്മാർക്ക് പെൻഷൻ, ക്ഷേമ സഹായം നൽകുന്നു.",
+      },
+      alternatives: ["Atal Pension Yojana", "Senior Citizen Savings Scheme", "Indira Gandhi National Old Age Pension", "Varishtha Pension Bima Yojana"],
+    },
   };
 
-const selectedScheme =
-  schemeMap[normalizedNeed] || {
-    name: {
-      English: "General Government Welfare Scheme",
-      Tamil: "பொது அரசுத் நலத்திட்டம்",
-      Hindi: "सामान्य सरकारी कल्याण योजना",
-      Telugu: "సాధారణ ప్రభుత్వ సంక్షేమ పథకం",
-      Malayalam: "സാമാന്യ സർക്കാർ ക്ഷേമ പദ്ധതി",
-    },
-    website: "https://www.myscheme.gov.in",
-    description: {
-      English: "BharatGov AI suggests checking MyScheme for relevant central and state welfare schemes.",
-      Tamil: "பொருத்தமான மத்திய மற்றும் மாநில நலத்திட்டங்களுக்கு MyScheme-ஐ பார்க்கலாம்.",
-      Hindi: "प्रासंगिक केंद्र और राज्य योजनाओं के लिए MyScheme देखें।",
-      Telugu: "సంబంధిత కేంద్ర మరియు రాష్ట్ర పథకాల కోసం MyScheme చూడండి.",
-      Malayalam: "ബന്ധപ്പെട്ട കേന്ദ്ര, സംസ്ഥാന പദ്ധതികൾക്കായി MyScheme പരിശോധിക്കുക.",
-    },
-  };
+  const selectedScheme =
+    schemeMap[normalizedNeed] || {
+      name: {
+        English: "General Government Welfare Scheme",
+        Tamil: "பொது அரசுத் நலத்திட்டம்",
+        Hindi: "सामान्य सरकारी कल्याण योजना",
+        Telugu: "సాధారణ ప్రభుత్వ సంక్షేమ పథకం",
+        Malayalam: "സാമാന്യ സർക്കാർ ക്ഷേമ പദ്ധതി",
+      },
+      website: "https://www.myscheme.gov.in",
+      description: {
+        English: "BharatGov AI suggests checking MyScheme for relevant central and state welfare schemes.",
+        Tamil: "பொருத்தமான மத்திய மற்றும் மாநில நலத்திட்டங்களுக்கு MyScheme-ஐ பார்க்கலாம்.",
+        Hindi: "प्रासंगिक केंद्र और राज्य योजनाओं के लिए MyScheme देखें।",
+        Telugu: "సంబంధిత కేంద్ర మరియు రాష్ట్ర పథకాల కోసం MyScheme చూడండి.",
+        Malayalam: "ബന്ധപ്പെട്ട കേന്ദ്ര, സംസ്ഥാന പദ്ധതികൾക്കായി MyScheme പരിശോധിക്കുക.",
+      },
+      alternatives: ["MyScheme Portal", "State Welfare Portal", "India.gov.in Services", "District e-Governance Centre"],
+    };
+
+  const eligibilityScore =
+    normalizedNeed === "senior citizen welfare"
+      ? "88%"
+      : normalizedNeed === "business loan"
+      ? "91%"
+      : normalizedNeed === "agriculture"
+      ? "90%"
+      : normalizedNeed === "scholarship"
+      ? "94%"
+      : "86%";
 
   const aiExplanation = {
     English: `As a ${userData.occupation} from ${displayState}, belonging to the ${userData.category} category with an annual income of ₹${userData.income}, this scheme is relevant for your selected need: ${userData.need}.`,
@@ -331,10 +298,7 @@ const selectedScheme =
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-100 to-green-100 p-6 text-black">
       <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl p-8">
-        <h1 className="text-4xl font-bold text-blue-700 mb-2">
-          {t[lang].title}
-        </h1>
-
+        <h1 className="text-4xl font-bold text-blue-700 mb-2">{t[lang].title}</h1>
         <p className="text-gray-600 mb-8">{t[lang].subtitle}</p>
 
         <div className="grid md:grid-cols-3 gap-4 mb-8">
@@ -347,30 +311,24 @@ const selectedScheme =
         </div>
 
         <section className="bg-green-50 border border-green-200 rounded-2xl p-6 mb-6">
-          <h2 className="text-2xl font-bold text-green-700 mb-3">
-            {t[lang].recommended}
-          </h2>
-          <h3 className="text-xl font-semibold">
-            {selectedScheme.name[lang]}
-          </h3>
-          <p className="text-gray-700 mt-3">
-            <div className="mt-4 bg-blue-100 text-blue-700 px-4 py-2 rounded-full inline-block font-bold">
- Eligibility Score: {normalizedNeed === "senior citizen welfare" ? "88%" : normalizedNeed === "business loan" ? "91%" : normalizedNeed === "agriculture" ? "90%" : "86%"} | Confidence: High
-</div>
-            {selectedScheme.description[lang]}
-          </p>
-          <div className="mt-5">
-  <h4 className="font-bold text-lg mb-2">
-    Alternative Schemes
-  </h4>
+          <h2 className="text-2xl font-bold text-green-700 mb-3">{t[lang].recommended}</h2>
+          <h3 className="text-xl font-semibold">{selectedScheme.name[lang]}</h3>
 
-  <ul className="list-disc pl-6 space-y-1">
-    <li>PMEGP</li>
-    <li>Stand Up India</li>
-    <li>CGTMSE</li>
-    <li>Startup India Seed Fund</li>
-  </ul>
-</div>
+          <div className="mt-4 bg-blue-100 text-blue-700 px-4 py-2 rounded-full inline-block font-bold">
+            Eligibility Score: {eligibilityScore} | Confidence: High
+          </div>
+
+          <p className="text-gray-700 mt-3">{selectedScheme.description[lang]}</p>
+
+          <div className="mt-5">
+            <h4 className="font-bold text-lg mb-2">{t[lang].alternatives}</h4>
+            <ul className="list-disc pl-6 space-y-1">
+              {selectedScheme.alternatives.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+
           <a
             href={selectedScheme.website}
             target="_blank"
@@ -382,9 +340,7 @@ const selectedScheme =
         </section>
 
         <section className="bg-yellow-50 border border-yellow-200 rounded-2xl p-6 mb-6">
-          <h2 className="text-2xl font-bold text-yellow-700 mb-3">
-            {t[lang].documents}
-          </h2>
+          <h2 className="text-2xl font-bold text-yellow-700 mb-3">{t[lang].documents}</h2>
           <ul className="list-disc pl-6 space-y-2">
             {docs[lang].map((doc) => (
               <li key={doc}>{doc}</li>
@@ -393,9 +349,7 @@ const selectedScheme =
         </section>
 
         <section className="bg-purple-50 border border-purple-200 rounded-2xl p-6 mb-6">
-          <h2 className="text-2xl font-bold text-purple-700 mb-3">
-            {t[lang].steps}
-          </h2>
+          <h2 className="text-2xl font-bold text-purple-700 mb-3">{t[lang].steps}</h2>
           <ol className="list-decimal pl-6 space-y-2">
             {t[lang].stepList.map((step) => (
               <li key={step}>{step}</li>
@@ -404,9 +358,7 @@ const selectedScheme =
         </section>
 
         <section className="bg-blue-50 border border-blue-200 rounded-2xl p-6">
-          <h2 className="text-2xl font-bold text-blue-800 mb-3">
-            {t[lang].ai}
-          </h2>
+          <h2 className="text-2xl font-bold text-blue-800 mb-3">{t[lang].ai}</h2>
           <p className="text-gray-700">{aiExplanation[lang]}</p>
         </section>
       </div>
