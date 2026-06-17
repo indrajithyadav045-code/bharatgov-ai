@@ -12,13 +12,27 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hidden md:flex gap-8 text-sm">
-          <a className="text-blue-700 border-b-2 border-blue-700">Home</a>
-          <a>About</a>
-          <a>Analytics</a>
-          <a>Schemes</a>
-          <a>Language</a>
-        </div>
+        <div className="hidden md:flex gap-8 text-sm font-medium">
+  <Link href="/" className="hover:text-blue-700">
+    Home
+  </Link>
+
+  <Link href="/about" className="hover:text-blue-700">
+    About
+  </Link>
+
+  <Link href="/analytics" className="hover:text-blue-700">
+    Analytics
+  </Link>
+
+  <Link href="/schemes" className="hover:text-blue-700">
+    Schemes
+  </Link>
+
+  <Link href="/language" className="hover:text-blue-700">
+    Language
+  </Link>
+</div>
 
         <Link
           href="/eligibility"
