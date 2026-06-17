@@ -14,151 +14,15 @@ export default function EligibilityPage() {
   const [occupation, setOccupation] = useState("");
   const [need, setNeed] = useState("");
 
-  const text = {
-    English: {
-      title: "BharatGov AI Assistant",
-      subtitle: "Find the right government schemes across India in seconds",
-      language: "Select Language",
-      age: "Age",
-      state: "Select State / Union Territory",
-      income: "Annual Income",
-      category: "Select Category",
-      occupation: "Select Occupation",
-      need: "Select Need / Support Type",
-      button: "Check Eligibility",
-    },
-    Tamil: {
-      title: "பாரத்Gov AI உதவியாளர்",
-      subtitle: "இந்திய அரசுத் திட்டங்களை சில விநாடிகளில் கண்டறியுங்கள்",
-      language: "மொழியைத் தேர்ந்தெடுக்கவும்",
-      age: "வயது",
-      state: "மாநிலம் / யூனியன் பிரதேசம்",
-      income: "ஆண்டு வருமானம்",
-      category: "பிரிவைத் தேர்ந்தெடுக்கவும்",
-      occupation: "தொழிலைத் தேர்ந்தெடுக்கவும்",
-      need: "தேவையைத் தேர்ந்தெடுக்கவும்",
-      button: "தகுதி சரிபார்க்கவும்",
-    },
-    Hindi: {
-      title: "भारतGov AI सहायक",
-      subtitle: "भारत की सही सरकारी योजनाएं कुछ सेकंड में खोजें",
-      language: "भाषा चुनें",
-      age: "आयु",
-      state: "राज्य / केंद्र शासित प्रदेश चुनें",
-      income: "वार्षिक आय",
-      category: "श्रेणी चुनें",
-      occupation: "व्यवसाय चुनें",
-      need: "आवश्यकता चुनें",
-      button: "पात्रता जांचें",
-    },
-    Telugu: {
-      title: "భారత్Gov AI సహాయకుడు",
-      subtitle: "భారతదేశంలోని సరైన ప్రభుత్వ పథకాలను కొన్ని సెకన్లలో కనుగొనండి",
-      language: "భాషను ఎంచుకోండి",
-      age: "వయస్సు",
-      state: "రాష్ట్రం / కేంద్ర పాలిత ప్రాంతం ఎంచుకోండి",
-      income: "వార్షిక ఆదాయం",
-      category: "వర్గాన్ని ఎంచుకోండి",
-      occupation: "వృత్తిని ఎంచుకోండి",
-      need: "అవసరం / సహాయం రకాన్ని ఎంచుకోండి",
-      button: "అర్హతను తనిఖీ చేయండి",
-    },
-    Malayalam: {
-      title: "ഭാരത്Gov AI സഹായി",
-      subtitle: "ഇന്ത്യയിലെ ശരിയായ സർക്കാർ പദ്ധതികൾ സെക്കൻഡുകൾക്കകം കണ്ടെത്തുക",
-      language: "ഭാഷ തിരഞ്ഞെടുക്കുക",
-      age: "പ്രായം",
-      state: "സംസ്ഥാനം / കേന്ദ്രഭരണ പ്രദേശം തിരഞ്ഞെടുക്കുക",
-      income: "വാർഷിക വരുമാനം",
-      category: "വിഭാഗം തിരഞ്ഞെടുക്കുക",
-      occupation: "തൊഴിൽ തിരഞ്ഞെടുക്കുക",
-      need: "ആവശ്യം / സഹായ തരം തിരഞ്ഞെടുക്കുക",
-      button: "യോഗ്യത പരിശോധിക്കുക",
-    },
-    Kannada: {
-      title: "ಭಾರತ್Gov AI ಸಹಾಯಕ",
-      subtitle: "ಭಾರತದ ಸರಿಯಾದ ಸರ್ಕಾರಿ ಯೋಜನೆಗಳನ್ನು ಕೆಲವೇ ಕ್ಷಣಗಳಲ್ಲಿ ಹುಡುಕಿ",
-      language: "ಭಾಷೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
-      age: "ವಯಸ್ಸು",
-      state: "ರಾಜ್ಯ / ಕೇಂದ್ರಾಡಳಿತ ಪ್ರದೇಶವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
-      income: "ವಾರ್ಷಿಕ ಆದಾಯ",
-      category: "ವರ್ಗವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
-      occupation: "ವೃತ್ತಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
-      need: "ಅವಶ್ಯಕತೆ / ಸಹಾಯ ಪ್ರಕಾರವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
-      button: "ಅರ್ಹತೆ ಪರಿಶೀಲಿಸಿ",
-    },
-    Marathi: {
-      title: "भारतGov AI सहाय्यक",
-      subtitle: "भारतातील योग्य सरकारी योजना काही सेकंदांत शोधा",
-      language: "भाषा निवडा",
-      age: "वय",
-      state: "राज्य / केंद्रशासित प्रदेश निवडा",
-      income: "वार्षिक उत्पन्न",
-      category: "प्रवर्ग निवडा",
-      occupation: "व्यवसाय निवडा",
-      need: "गरज / सहाय्य प्रकार निवडा",
-      button: "पात्रता तपासा",
-    },
-  };
-
-  const states = [
-    "Andhra Pradesh",
-    "Arunachal Pradesh",
-    "Assam",
-    "Bihar",
-    "Chhattisgarh",
-    "Goa",
-    "Gujarat",
-    "Haryana",
-    "Himachal Pradesh",
-    "Jharkhand",
-    "Karnataka",
-    "Kerala",
-    "Madhya Pradesh",
-    "Maharashtra",
-    "Manipur",
-    "Meghalaya",
-    "Mizoram",
-    "Nagaland",
-    "Odisha",
-    "Punjab",
-    "Rajasthan",
-    "Sikkim",
-    "Tamil Nadu",
-    "Telangana",
-    "Tripura",
-    "Uttar Pradesh",
-    "Uttarakhand",
-    "West Bengal",
-    "Andaman and Nicobar Islands",
-    "Chandigarh",
-    "Dadra and Nagar Haveli and Daman and Diu",
-    "Delhi (NCT)",
-    "Jammu and Kashmir",
-    "Ladakh",
-    "Lakshadweep",
-    "Puducherry",
-  ];
+  const states = ["Tamil Nadu", "Kerala", "Karnataka", "Andhra Pradesh", "Telangana", "Maharashtra", "Assam", "Delhi (NCT)"];
 
   const needs = [
     "Scholarship",
-    "Education",
-    "Student Loan",
-    "Health Care",
-    "Employment",
-    "Skill Development",
     "Business Loan",
-    "Startup Support",
     "Agriculture",
     "Housing",
-    "Women Empowerment",
     "Senior Citizen Welfare",
-    "Disability Support",
-    "Minority Welfare",
-    "Pension Schemes",
-    "Rural Development",
-    "Urban Development",
-    "Green Energy",
+    "Health Care",
   ];
 
   const handleSubmit = () => {
@@ -175,119 +39,127 @@ export default function EligibilityPage() {
     router.push(`/results?${query}`);
   };
 
+  const inputStyle = {
+    width: "100%",
+    padding: "14px",
+    borderRadius: "10px",
+    border: "1px solid #cbd5e1",
+    fontSize: "15px",
+    background: "#f8fafc",
+    color: "#111827",
+  };
+
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-100 to-green-100 flex items-center justify-center p-6">
-      <div className="bg-white w-full max-w-3xl rounded-3xl shadow-2xl p-8">
-        <div className="mb-6">
-          <label className="block text-black font-semibold mb-2">
-            {text[language].language}
-          </label>
-          <select
-            value={language}
-            onChange={(e) => setLanguage(e.target.value)}
-            className="border border-gray-300 p-3 rounded-lg text-black bg-white w-full"
-          >
+    <main
+      style={{
+        minHeight: "100vh",
+        background: "linear-gradient(135deg, #dbeafe, #dcfce7)",
+        padding: "40px 20px",
+        color: "#111827",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: "900px",
+          margin: "0 auto",
+          background: "white",
+          borderRadius: "28px",
+          padding: "35px",
+          boxShadow: "0 20px 50px rgba(0,0,0,0.15)",
+        }}
+      >
+        <h1 style={{ textAlign: "center", fontSize: "42px", color: "#1d4ed8", marginBottom: "8px" }}>
+          Check Your Eligibility
+        </h1>
+
+        <p style={{ textAlign: "center", color: "#475569", marginBottom: "30px" }}>
+          Fill your details and let BharatGov AI find the best scheme for you
+        </p>
+
+        <div style={{ marginBottom: "20px" }}>
+          <label style={{ fontWeight: "bold" }}>Select Language</label>
+          <select value={language} onChange={(e) => setLanguage(e.target.value)} style={inputStyle}>
             <option>English</option>
             <option>Tamil</option>
             <option>Hindi</option>
             <option>Telugu</option>
             <option>Malayalam</option>
-            <option>Kannada</option>
-            <option>Marathi</option>
           </select>
         </div>
 
-        <h1 className="text-4xl font-bold text-center text-blue-700 mb-2">
-          {text[language].title}
-        </h1>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+            gap: "18px",
+          }}
+        >
+          <input style={inputStyle} type="number" placeholder="Age" value={age} onChange={(e) => setAge(e.target.value)} />
 
-        <p className="text-center text-gray-600 mb-8">
-          {text[language].subtitle}
-        </p>
-
-        <div className="grid md:grid-cols-2 gap-4">
-          <input
-            type="number"
-            placeholder={text[language].age}
-            value={age}
-            onChange={(e) => setAge(e.target.value)}
-            className="border border-gray-300 p-3 rounded-lg text-black bg-white"
-          />
-
-          <select
-            value={state}
-            onChange={(e) => setState(e.target.value)}
-            className="border border-gray-300 p-3 rounded-lg text-black bg-white"
-          >
-            <option value="">{text[language].state}</option>
-            {states.map((item) => (
-              <option key={item} value={item}>
-                {item}
-              </option>
-            ))}
+          <select style={inputStyle} value={state} onChange={(e) => setState(e.target.value)}>
+            <option value="">Select State / UT</option>
+            {states.map((s) => <option key={s}>{s}</option>)}
           </select>
 
-          <input
-            type="number"
-            placeholder={text[language].income}
-            value={income}
-            onChange={(e) => setIncome(e.target.value)}
-            className="border border-gray-300 p-3 rounded-lg text-black bg-white"
-          />
+          <input style={inputStyle} type="number" placeholder="Annual Income" value={income} onChange={(e) => setIncome(e.target.value)} />
 
-          <select
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            className="border border-gray-300 p-3 rounded-lg text-black bg-white"
-          >
-            <option value="">{text[language].category}</option>
+          <select style={inputStyle} value={category} onChange={(e) => setCategory(e.target.value)}>
+            <option value="">Select Category</option>
             <option>General</option>
             <option>OBC</option>
             <option>SC</option>
             <option>ST</option>
             <option>EWS</option>
             <option>Minority</option>
-            <option>PwD</option>
           </select>
 
-          <select
-            value={occupation}
-            onChange={(e) => setOccupation(e.target.value)}
-            className="border border-gray-300 p-3 rounded-lg text-black bg-white"
-          >
-            <option value="">{text[language].occupation}</option>
+          <select style={inputStyle} value={occupation} onChange={(e) => setOccupation(e.target.value)}>
+            <option value="">Select Occupation</option>
             <option>Student</option>
             <option>Farmer</option>
-            <option>Unemployed</option>
-            <option>Private Employee</option>
-            <option>Government Employee</option>
             <option>Business Owner</option>
-            <option>Entrepreneur</option>
-            <option>Homemaker</option>
             <option>Senior Citizen</option>
-            <option>Person with Disability</option>
+            <option>Unemployed</option>
           </select>
 
-          <select
-            value={need}
-            onChange={(e) => setNeed(e.target.value)}
-            className="border border-gray-300 p-3 rounded-lg text-black bg-white"
-          >
-            <option value="">{text[language].need}</option>
-            {needs.map((item) => (
-              <option key={item} value={item}>
-                {item}
-              </option>
-            ))}
+          <select style={inputStyle} value={need} onChange={(e) => setNeed(e.target.value)}>
+            <option value="">Select Need / Support Type</option>
+            {needs.map((n) => <option key={n}>{n}</option>)}
           </select>
         </div>
 
         <button
           onClick={handleSubmit}
-          className="w-full mt-8 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition"
+          style={{
+            marginTop: "28px",
+            width: "100%",
+            padding: "16px",
+            borderRadius: "14px",
+            border: "none",
+            background: "#1d4ed8",
+            color: "white",
+            fontSize: "17px",
+            fontWeight: "bold",
+            cursor: "pointer",
+            boxShadow: "0 10px 20px rgba(29,78,216,0.3)",
+          }}
         >
-          {text[language].button}
+          Check Eligibility →
         </button>
+
+        <div
+          style={{
+            marginTop: "22px",
+            background: "#dcfce7",
+            padding: "14px",
+            borderRadius: "12px",
+            textAlign: "center",
+            color: "#166534",
+            fontWeight: "600",
+          }}
+        >
+          🔒 Your information is secure and used only for scheme recommendation.
+        </div>
       </div>
     </main>
   );
