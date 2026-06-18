@@ -9,13 +9,24 @@ export default function Home() {
             B
           </div>
 
-          <div>
-            <h1 className="text-2xl font-bold text-blue-800">BharatGov AI</h1>
-            <p className="text-xs font-semibold text-gray-600">
-              AI-Powered Citizen Copilot
-            </p>
-          </div>
-        </div>
+         <div className="flex items-center gap-3">
+  <img
+    src="/logo.png.png"
+    alt="BharatGov AI Logo"
+    width="70"
+    height="70"
+  />
+
+  <div>
+    <h1 className="text-2xl font-bold text-blue-800">
+      BharatGov AI
+    </h1>
+
+    <p className="text-xs text-gray-600">
+      AI-Powered Citizen Copilot
+    </p>
+  </div>
+</div>
 
         <div className="hidden md:flex gap-8 text-sm font-medium">
           <Link href="/" className="text-blue-700 font-bold">
