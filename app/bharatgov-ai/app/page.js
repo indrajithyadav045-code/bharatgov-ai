@@ -1,3 +1,4 @@
+```jsx
 import Link from "next/link";
 
 export default function Home() {
@@ -5,33 +6,29 @@ export default function Home() {
     <main className="min-h-screen bg-white text-black px-8 py-6">
       <nav className="flex items-center justify-between mb-10">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-800 to-green-700 text-white flex items-center justify-center font-black shadow-lg">
-            B
+          <img
+            src="/logo.png.png"
+            alt="BharatGov AI Logo"
+            width="70"
+            height="70"
+          />
+
+          <div>
+            <h1 className="text-2xl font-bold text-blue-800">
+              BharatGov AI
+            </h1>
+
+            <p className="text-xs text-gray-600">
+              AI-Powered Citizen Copilot
+            </p>
           </div>
-
-         <div className="flex items-center gap-3">
-  <img
-    src="/logo.png.png"
-    alt="BharatGov AI Logo"
-    width="70"
-    height="70"
-  />
-
-  <div>
-    <h1 className="text-2xl font-bold text-blue-800">
-      BharatGov AI
-    </h1>
-
-    <p className="text-xs text-gray-600">
-      AI-Powered Citizen Copilot
-    </p>
-  </div>
-</div>
+        </div>
 
         <div className="hidden md:flex gap-8 text-sm font-medium">
           <Link href="/" className="text-blue-700 font-bold">
             Home
           </Link>
+
           <Link href="/eligibility" className="hover:text-blue-700">
             Eligibility
           </Link>
@@ -100,7 +97,9 @@ export default function Home() {
       </section>
 
       <section className="max-w-6xl mx-auto mt-16 pb-16">
-        <h3 className="text-3xl font-bold text-center mb-8">How It Works</h3>
+        <h3 className="text-3xl font-bold text-center mb-8">
+          How It Works
+        </h3>
 
         <div className="grid md:grid-cols-4 gap-5">
           {[
@@ -116,6 +115,7 @@ export default function Home() {
               <div className="w-10 h-10 mx-auto rounded-full bg-blue-700 text-white flex items-center justify-center font-bold">
                 {num}
               </div>
+
               <h4 className="font-bold mt-4">{title}</h4>
             </div>
           ))}
@@ -124,3 +124,4 @@ export default function Home() {
     </main>
   );
 }
+```
