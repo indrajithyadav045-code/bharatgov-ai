@@ -6,7 +6,30 @@ import { useRouter } from "next/navigation";
 export default function EligibilityPage() {
   const router = useRouter();
 
-  const [language, setLanguage] = useState("English");
+ const [language, setLanguage] = useState("English");
+  const text = {
+  English: {
+    title: "Check Your Eligibility",
+    button: "Check Eligibility →",
+  },
+  Tamil: {
+    title: "உங்கள் தகுதியை சரிபார்க்கவும்",
+    button: "தகுதி சரிபார்க்கவும் →",
+  },
+  Hindi: {
+    title: "अपनी पात्रता जांचें",
+    button: "पात्रता जांचें →",
+  },
+  Telugu: {
+    title: "మీ అర్హతను తనిఖీ చేయండి",
+    button: "అర్హతను తనిఖీ చేయండి →",
+  },
+  Malayalam: {
+    title: "നിങ്ങളുടെ യോഗ്യത പരിശോധിക്കുക",
+    button: "യോഗ്യത പരിശോധിക്കുക →",
+  },
+};
+const ui = text[language] || text.English;
   const [age, setAge] = useState("");
   const [state, setState] = useState("");
   const [income, setIncome] = useState("");
@@ -106,8 +129,8 @@ const states = [
         }}
       >
         <h1 style={{ textAlign: "center", fontSize: "42px", color: "#1d4ed8", marginBottom: "8px" }}>
-          Check Your Eligibility
-        </h1>
+  {ui.title}
+</h1>
 
         <p style={{ textAlign: "center", color: "#475569", marginBottom: "30px" }}>
           Fill your details and let BharatGov AI find the best scheme for you
@@ -180,9 +203,9 @@ const states = [
             cursor: "pointer",
             boxShadow: "0 10px 20px rgba(29,78,216,0.3)",
           }}
-        >
-          Check Eligibility →
-        </button>
+      >
+  {ui.button}
+</button>
 
         <div
           style={{
