@@ -6,11 +6,54 @@ export default function Home() {
       <nav className="flex items-center justify-between mb-10">
         <div className="flex items-center gap-3">
           <div className="w-12 h-12 rounded-full bg-blue-900"></div>
-          <div>
-            <h1 className="text-xl font-bold text-blue-800">BharatGov AI</h1>
-            <p className="text-xs font-semibold">AI assistant for government scheme</p>
-          </div>
-        </div>
+          <div
+  style={{
+    display: "flex",
+    alignItems: "center",
+    gap: "12px",
+  }}
+>
+  <div
+    style={{
+      width: "52px",
+      height: "52px",
+      borderRadius: "16px",
+      background: "linear-gradient(135deg, #1E3A8A, #138808)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      color: "white",
+      fontWeight: "900",
+      fontSize: "18px",
+      boxShadow: "0 10px 25px rgba(30,58,138,0.25)",
+    }}
+  >
+    B
+  </div>
+
+  <div>
+    <h1
+      style={{
+        fontSize: "22px",
+        fontWeight: "800",
+        color: "#1E3A8A",
+        margin: 0,
+      }}
+    >
+      BharatGov AI
+    </h1>
+
+    <p
+      style={{
+        fontSize: "12px",
+        color: "#475569",
+        margin: 0,
+      }}
+    >
+      AI-Powered Citizen Copilot
+    </p>
+  </div>
+</div>
 
         <div className="hidden md:flex gap-8 text-sm font-medium">
   <Link href="/" className="hover:text-blue-700">
