@@ -1,36 +1,151 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+BharatGov AI
 
-## Getting Started
+A modern AI-powered platform for simplified access to Indian government services and information. Built with Next.js, BharatGov AI leverages AI to make government services more accessible, transparent, and user-friendly for every Indian citizen.
 
-First, run the development server:
+🇮🇳 Overview
 
-```bash
+BharatGov AI bridges the gap between citizens and government services by providing an intelligent interface powered by AI. Whether you're looking for information about social schemes, filing applications, checking status, or accessing public records, BharatGov AI simplifies the process.
+
+✨ Key Features
+AI-Powered Search: Natural language queries to find government schemes and services
+Service Aggregation: Centralized access to services across central and state government portals
+Multi-language Support: Query and receive responses in Indian languages
+Intelligent Form Filling: Guided assistance for government application forms
+Real-time Status Tracking: Monitor application and service requests
+Verified Information: Curated content directly from official government sources
+Mobile-First Design: Optimized for accessibility across devices
+🚀 Getting Started
+Prerequisites
+Node.js 18+
+npm or yarn package manager
+Installation
+Clone the repository:
+bash
+git clone https://github.com/indrajithyadav045-code/bharatgov-ai.git
+cd bharatgov-ai
+Install dependencies:
+bash
+npm install
+# or
+yarn install
+Set up environment variables:
+bash
+cp .env.example .env.local
+# Configure your API keys and endpoints
+Run the development server:
+bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open http://localhost:3000 in your browser
+📦 Project Structure
+bharatgov-ai/
+├── app/                    # Next.js app directory
+│   ├── page.js            # Landing page
+│   ├── layout.js          # Root layout
+│   └── api/               # API routes
+├── public/                # Static assets
+├── components/            # Reusable React components
+├── styles/                # Styling
+├── lib/                   # Utility functions
+└── package.json           # Dependencies
+🛠 Tech Stack
+Frontend: Next.js 14+, React 18+
+Styling: Tailwind CSS / CSS Modules
+AI Integration: LLM APIs for intelligent processing
+Database: [Specify your DB]
+Deployment: Vercel / Self-hosted
+📖 Usage
+Basic Search
+javascript
+// Example: Search for educational schemes
+GET /api/search?q=education%20scholarship
+Service Lookup
+javascript
+// Find services by category
+GET /api/services?category=health
+🔧 Configuration
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Environment variables needed:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+env
+# AI/LLM Configuration
+NEXT_PUBLIC_API_ENDPOINT=https://api.example.com
+LLM_API_KEY=your_api_key_here
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Government Data APIs
+GOV_DATA_API_KEY=your_gov_data_key
+STATE_PORTAL_KEY=your_state_key
 
-## Learn More
+# Optional: Analytics
+NEXT_PUBLIC_ANALYTICS_ID=your_analytics_id
+📚 API Documentation
+Endpoints
+Search Services
+GET /api/search
+Query Parameters:
+  - q: search query (required)
+  - category: filter by category
+  - language: response language (default: en)
+  
+Response:
+{
+  results: [],
+  count: number,
+  filters: {}
+}
+Get Service Details
+GET /api/services/:id
+Response:
+{
+  id: string,
+  name: string,
+  description: string,
+  department: string,
+  eligibility: [],
+  documents: [],
+  applicableStates: []
+}
+🤝 Contributing
 
-To learn more about Next.js, take a look at the following resources:
+We welcome contributions! Please follow these steps:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Fork the repository
+Create a feature branch (git checkout -b feature/amazing-feature)
+Commit your changes (git commit -m 'Add amazing feature')
+Push to the branch (git push origin feature/amazing-feature)
+Open a Pull Request
+Development Guidelines
+Write clear commit messages
+Follow the existing code style
+Add tests for new features
+Update documentation
+🐛 Bug Reports & Feature Requests
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Found a bug or have a feature request? Open an issue on GitHub Issues
 
-## Deploy on Vercel
+Please include:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Clear description of the issue
+Steps to reproduce (for bugs)
+Expected vs actual behavior
+Screenshots if applicable
+📄 License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+🙏 Acknowledgments
+Government of India portals and APIs
+Open source community and contributors
+Next.js and React ecosystems
+📞 Support
+Issues: GitHub Issues
+Discussions: GitHub Discussions
+Email: contact@bharatgov-ai.com
+🔗 Useful Links
+Next.js Documentation
+Government APIs
+Deployment Guide
+Contributing Guide
+
+Made with ❤️ for India | Visit Website | Documentation
